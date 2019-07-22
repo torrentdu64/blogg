@@ -6,12 +6,12 @@ import thunk from 'redux-thunk'
 
 
 import App from './components/App';
-import reducer from './reducers'
+import reducers from './reducers'
 
-const store = createStore(reducer)
+const store = createStore(reducers,  applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Provider store={store, applyMiddleware(thunk)} >
+  <Provider store={store} >
   <App />
   </Provider>,
    document.getElementById('root')
